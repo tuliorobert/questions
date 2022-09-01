@@ -5,7 +5,10 @@ function sortAnswer() {
         "Talvez...",
         "Acredito que não :(",
         "De jeito nenhum!",
-        "Na real, eu não me importo"
+        "Na real, eu não me importo",
+        "Sei lá, mil tretas",
+        "Vou perguntar no posto Ipiranga e já te falo!",
+        "Tá aí uma pergunta que não to afim de responder u.u"
     ]
 
     return answers[parseInt(Math.random() * answers.length)];
@@ -38,5 +41,6 @@ function getAnswer() {
             questionArea.value = "";
         } else alert("Se sua pergunta não tiver um '?' ela se torna um afimação, tente de novo!");
 
-    } else alert("Escreva uma pergunta primeiro!");
+    } else {
+    }
 }
