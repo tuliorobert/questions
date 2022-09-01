@@ -8,7 +8,7 @@ function sortAnswer() {
         "Na real, eu não me importo"
     ]
 
-    return answers[parseInt(Math.random() * (answers.length - 1))];
+    return answers[parseInt(Math.random() * answers.length)];
 }
 
 addEventListener("keypress", function(e) {
