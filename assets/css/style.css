@@ -39,3 +39,19 @@ body {
 .send-button:hover {
     background: #f12c7b;
 }
+
+#alert-modal {
+    text-shadow: none;
+    color: #000;
+}
+
+#alert-modal .btn {
+    font-weight: bold;
+    background-color: #F675A8;
+    color: #fff;
+}
+
+#alert-modal .btn:hover {
+    background-color: #f12c7b;
+    border-color: #000;
+}

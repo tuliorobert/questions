@@ -3,12 +3,9 @@ function sortAnswer() {
         "Definitivamente sim!",
         "Acho que sim",
         "Talvez...",
-        "Acredito que não :(",
+        "Acredito que não '-'",
         "De jeito nenhum!",
-        "Na real, eu não me importo",
-        "Sei lá, mil tretas",
-        "Vou perguntar no posto Ipiranga e já te falo!",
-        "Tá aí uma pergunta que não to afim de responder u.u"
+        "Não tenho certeza :("
     ]
 
     return answers[parseInt(Math.random() * answers.length)];
@@ -16,13 +13,22 @@ function sortAnswer() {
 
 addEventListener("keypress", function(e) {
     if(e.key == "Enter") {
-        getAnswer();
+        let sendBtn = document.getElementById("enviar");
+        let questionArea = this.document.getElementById("question");
+
+        if(questionArea.value != "") {
+            sendBtn.click();
+            questionArea.value = "";
+        }
     }
 });
 
 function getAnswer() {
     let questionArea = document.getElementById("question");
     let answerArea = document.getElementById("answer");
+    let alertBox = document.getElementById("alert-modal");
+    let alertContent = document.getElementById("alert-content");
+    let modal = new bootstrap.Modal(alertBox);
 
     let lastChar = String(questionArea.value).charAt((questionArea.value).length - 1);
 
@@ -39,8 +45,13 @@ function getAnswer() {
             }, 2000);
     
             questionArea.value = "";
-        } else alert("Se sua pergunta não tiver um '?' ela se torna um afimação, tente de novo!");
+        } else {
+            alertContent.textContent = "Se sua pergunta não tiver um '?' ela se torna um afimação, tente de novo!";
+            modal.show();
+        }
 
     } else {
+        alertContent.textContent = "Você precisa fazer uma pergunta primeiro!";
+        modal.show();
     }
 }
