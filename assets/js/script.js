@@ -19,6 +19,9 @@ addEventListener("keypress", function(e) {
         if(questionArea.value != "") {
             sendBtn.click();
             questionArea.value = "";
+        } else {
+            let dismissBtn = this.document.getElementById("dismiss-btn");
+            dismissBtn.click();
         }
     }
 });
