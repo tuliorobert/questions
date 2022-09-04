@@ -46,7 +46,7 @@ function getAnswer() {
     
             questionArea.value = "";
         } else {
-            alertContent.textContent = "Se sua pergunta não tiver um '?' ela se torna um afimação, tente de novo!";
+            alertContent.textContent = "Se sua pergunta não tiver um '?' ela se torna uma afimação, tente de novo!";
             modal.show();
         }
 
